@@ -1,5 +1,7 @@
 package com.sandeep.examples.controller;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -36,5 +38,12 @@ public class NoteController {
 		System.out.println("note: "+note.toString());
 		noteService.addNote(note);
 		return "SUCCESS";
+	}
+	
+	@RequestMapping(value = "/getNotes", method = RequestMethod.GET)
+	@ResponseBody
+	public List<Note> getNotes(){
+		System.out.println("Getting all notes");
+		return noteService.getNotes();
 	}
 }

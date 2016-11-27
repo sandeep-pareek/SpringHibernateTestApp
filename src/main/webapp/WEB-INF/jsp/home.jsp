@@ -33,7 +33,7 @@
 			<tbody>
 				<tr ng-repeat="note in notes">
 					<td> {{note.id}} </td>
-					<td> {{note.heading}} </td>
+					<td> {{note.header}} </td>
 					<td> {{note.description}} </td>
 					<td>
 <!-- 						<button class="btn btn-success" ng-show="true" ng-click="CalculateTime(card.sl)">Calculate </button> -->

@@ -31,13 +31,20 @@
 		</div>
 		<table class="table table-striped table-bordered table-hover table-condensed">
 			<tbody>
+			<tr>
+			<th>ID</th>
+			<th>Header</th>
+			<th>Desc</th>
+			<th>Status</th>
+			<th>Delete</th>
+			</tr>
 				<tr ng-repeat="note in notes">
 					<td> {{note.id}} </td>
 					<td> {{note.header}} </td>
 					<td> {{note.description}} </td>
-					<td>
-<!-- 						<button class="btn btn-success" ng-show="true" ng-click="CalculateTime(card.sl)">Calculate </button> -->
-					</td>
+					<td>status</td>
+					<td>Delete</td>
+
 				</tr>
 			</tbody>
 		</table>

@@ -23,6 +23,15 @@ private Integer id;
 
 private String description;
 private String header;
+private String status;
+
+public String getStatus() {
+	return status;
+}
+
+public void setStatus(String status) {
+	this.status = status;
+}
 
 public Integer getId() {
 	return id;
@@ -51,6 +60,7 @@ public String getHeader() {
 public void setHeader(String header) {
 	this.header = header;
 }
+
 
 
 @Override

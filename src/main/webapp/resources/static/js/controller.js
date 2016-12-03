@@ -14,7 +14,7 @@ $scope.notes = [];
             }]
         }).then(function onSuccess(response){
             alert("success");
-            $scope.notes.push($scope.noteObj);
+            //$scope.notes.push($scope.noteObj);
             $scope.noteObj = {};
         });
                 
@@ -25,10 +25,7 @@ $scope.notes = [];
         $http({
             method: "GET",
             headers: {'Content-Type': 'application/json'},
-            url : "http://localhost:8080/spring-hibernate-example/getNotes",
-            transformResponse: [function(data){
-                return data;
-            }]
+            url : "http://localhost:8080/spring-hibernate-example/getNotes"
 
         }).then(function onSuccess(response){
             alert("success in fetchNotes");

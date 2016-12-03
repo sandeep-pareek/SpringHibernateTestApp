@@ -32,6 +32,7 @@ public class NoteController {
 		return "home";
 	}
 	
+	
 	@RequestMapping(value = "/addNote", method = RequestMethod.POST)	
 	@ResponseBody
 	public String addNote(@RequestBody Note note){

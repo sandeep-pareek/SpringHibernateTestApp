@@ -15,17 +15,18 @@ import org.springframework.web.client.RestTemplate;
 import com.sandeep.examples.model.Note;
 import com.sandeep.examples.service.NoteService;
 
+
+/**
+ * 
+ * @author Sandeep Pareek
+ *
+ */
 @Controller
 public class NoteController {
 	private static final String FAILURE = "FAILURE";
 	
 	@Autowired
 	private NoteService noteService;
-	
-	//@Autowired
-	//public void setNoteService(NoteService noteService){
-	//	this.noteService = noteService;
-	//}
 
 	@RequestMapping("/")
 	public String homepage() {
@@ -37,6 +38,7 @@ public class NoteController {
 	@ResponseBody
 	public String addNote(@RequestBody Note note){
 		System.out.println("note: "+note.toString());
+		note.setStatus("Created");
 		noteService.addNote(note);
 		return "SUCCESS";
 	}

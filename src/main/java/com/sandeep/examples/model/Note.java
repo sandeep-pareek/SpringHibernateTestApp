@@ -8,6 +8,12 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
+/**
+ * 
+ * @author Sandeep Pareek
+ *
+ */
+
 @Entity
 @Table(name="T_NOTE")
 public class Note implements Serializable{
@@ -65,7 +71,6 @@ public void setHeader(String header) {
 
 @Override
 	public String toString() {
-		// TODO Auto-generated method stub
 		return "id: "+ id.toString() + 
 				"descrition: " +description.toString() 
 				+"header: " + header.toString();

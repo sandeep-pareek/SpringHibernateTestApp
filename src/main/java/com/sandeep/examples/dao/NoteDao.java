@@ -4,6 +4,12 @@ import java.util.List;
 
 import com.sandeep.examples.model.Note;
 
+/**
+ * 
+ * @author Sandeep Pareek
+ *
+ */
+
 public interface NoteDao {
 	public void addNote(Note note);
 	

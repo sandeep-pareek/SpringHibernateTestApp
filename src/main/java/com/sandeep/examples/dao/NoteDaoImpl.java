@@ -9,17 +9,19 @@ import org.springframework.stereotype.Repository;
 
 import com.sandeep.examples.model.Note;
 
+/**
+ * 
+ * @author Sandeep Pareek
+ *
+ */
+
 @Repository
 public class NoteDaoImpl implements NoteDao{
 
 	@Autowired
 	private SessionFactory sessionFactory;
 	
-	//public void setSessionFactory(SessionFactory sf){
-	//	this.sessionFactory =sf;
-	//}
-	
-	//@Override
+	@Override
 	public void addNote(Note note) {
 		try {
 			Session session = this.sessionFactory.getCurrentSession();
@@ -34,7 +36,6 @@ public class NoteDaoImpl implements NoteDao{
 		List<Note> list = null;
 		try {
 			Session session = this.sessionFactory.getCurrentSession();
-			//session.get
 			 list = session.createCriteria(Note.class).list();
 		} catch (Exception e) {
 			e.printStackTrace();

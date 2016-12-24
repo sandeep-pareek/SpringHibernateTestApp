@@ -33,4 +33,10 @@ public class NoteServiceImpl implements NoteService{
 		return noteDao.getNotes();
 	}
 
+	@Override
+	@Transactional
+	public boolean deleteNote(long id) {
+		return noteDao.deleteNote(id);
+	}
+
 }

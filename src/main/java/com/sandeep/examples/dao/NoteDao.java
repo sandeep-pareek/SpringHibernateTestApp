@@ -15,4 +15,5 @@ public interface NoteDao {
 	
 	public List<Note> getNotes();
 
+	public boolean deleteNote(long id);
 }

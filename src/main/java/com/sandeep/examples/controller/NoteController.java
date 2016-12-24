@@ -9,8 +9,6 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
-import org.springframework.web.client.RestClientException;
-import org.springframework.web.client.RestTemplate;
 
 import com.sandeep.examples.model.Note;
 import com.sandeep.examples.service.NoteService;
@@ -48,5 +46,12 @@ public class NoteController {
 	public List<Note> getNotes(){
 		System.out.println("Getting all notes");
 		return noteService.getNotes();
+	}
+	
+	@RequestMapping(value="/deleteNote/{id}", method= RequestMethod.GET)
+	@ResponseBody
+	public String deleteNote(@PathVariable("id")long id){
+		System.out.println("id:"+id);
+		return noteService.deleteNote(id) ? "SUCCESS": "FAILURE";
 	}
 }

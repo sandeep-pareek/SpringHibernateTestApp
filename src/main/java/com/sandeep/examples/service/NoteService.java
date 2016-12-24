@@ -15,5 +15,7 @@ public interface NoteService {
 	public void addNote(Note note);
 	
 	public List<Note> getNotes();
+	
+	public boolean deleteNote();
 
 }

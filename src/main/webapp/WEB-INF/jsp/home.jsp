@@ -4,63 +4,47 @@
 <meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 
-<title>Spring Hibernate Example</title>
+<title>Spring-MVC Hibernate Example</title>
 <meta name="description" content="">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet" href="resources/static/css/app.css">
 <link rel="stylesheet" href="resources/static/css/bootstrap.min.css">
 </head>
 <body ng-controller="controller">
-	<div class="jumbotron text-center">
-		<h1>Welcome to Spring MVC with Hibernate demo App by Sandeep</h1>
-	</div>
 
-	<div class="container">
-		<div class="row">
-			<div class="col-sm-4">
-				<!-- 				Id: <input type="text" id="noteid" ng-model='noteObj.id' /><br /> -->
-				Header: <input type="text" id="noteheader" ng-model='noteObj.header' /><br />
-				Desc: <input type="text" id="notedesc"
-					ng-model='noteObj.description' /><br />
-				<button class="btn btn-primary" ng-click="addNote()">Add
-					Note</button>
+	<div>
+
+		<nav class="navbar navbar-default">
+			<div class="container">
+				<div class="navbar-header">
+					<a class="navbar-brand" href="#/">SpringMVC-Hiberante-App</a>
+				</div>
+
+				<ul class="nav navbar-nav navbar-right">
+					<li><a href="#/"><i class="fa fa-home"></i> Dashboard</a></li>
+					<li><a href="#about"><i class="fa fa-shield"></i> About Me</a></li>
+					<li><a href="#contact"><i class="fa fa-comment"></i>
+							Contact Me</a></li>
+				</ul>
 			</div>
+		</nav>
+
+		<div id="main">
+
+			<div ng-view></div>
+
 		</div>
 	</div>
 
-	<div class="container">
-		<div class="row"></div>
-		<table
-			class="table table-striped table-bordered table-hover table-condensed">
-			<tbody>
-				<tr>
-					<th>ID</th>
-					<th>Header</th>
-					<th>Desc</th>
-					<th>Status</th>
-					<th>Delete</th>
-				</tr>
-				<tr ng-repeat="note in notes">
-					<td>{{note.id}}</td>
-					<td>{{note.header}}</td>
-					<td>{{note.description}}</td>
-					<td>status</td>
-					<td>
-						<button class="btn btn-primary" ng-click="deleteNote(note.id)">Delete Note</button>
-					</td>
-
-				</tr>
-			</tbody>
-		</table>
-		<br /> <br />
-
-	</div>
-
 	<script src="resources/static/js/angular.min.js"></script>
-	<script src="resources/static/js/moment.min.js"></script>
-	<script src="resources/static/js/angular-moment.min.js"></script>
+	<script src="resources/static/js/angular-route.js"></script>
 	<script src="resources/static/js/app.js"></script>
 	<script src="resources/static/js/controller.js"></script>
+
+	<script src="resources/static/pages/about/aboutController.js"></script>
+	<script src="resources/static/pages/contact/contactController.js"></script>
+	<script src="resources/static/pages/dashboard/dashboardController.js"></script>
+
 	<script src="resources/static/js/jquery-3.1.1.min.js"></script>
 </body>
 </html>

@@ -2,7 +2,7 @@ package com.sandeep.examples.config;
 
 import javax.sql.DataSource;
 
-import org.apache.commons.dbcp.BasicDataSource;
+import org.apache.commons.dbcp2.BasicDataSource;
 import org.hibernate.SessionFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
@@ -24,7 +24,7 @@ import com.sandeep.examples.model.Note;
 @Configuration
 @EnableTransactionManagement
 @ComponentScan("com.sandeep.examples")
-public class WebConfig extends WebMvcConfigurerAdapter{
+public class WebConfig extends WebMvcConfigurer {
 
     @Override
     public void addResourceHandlers(ResourceHandlerRegistry registry) {
@@ -37,7 +37,6 @@ public class WebConfig extends WebMvcConfigurerAdapter{
         registry.
         addResourceHandler("/resources/static/**")
                 .addResourceLocations("/resources/static/");
-
     }
 
     @Bean

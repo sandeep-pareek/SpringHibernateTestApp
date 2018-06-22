@@ -19,13 +19,11 @@ public class NoteServiceImpl implements NoteService{
 //		this.noteDao = noteDao;
 //	}
 	
-	@Override
 	@Transactional
 	public void addNote(Note note) {
 		noteDao.addNote(note);
 	}
 	
-	@Override
 	@Transactional
 	public List<Note> getNotes(){
 		return noteDao.getNotes();

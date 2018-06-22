@@ -19,7 +19,6 @@ public class NoteDaoImpl implements NoteDao{
 	//	this.sessionFactory =sf;
 	//}
 	
-	//@Override
 	public void addNote(Note note) {
 		try {
 			Session session = this.sessionFactory.getCurrentSession();
@@ -29,7 +28,6 @@ public class NoteDaoImpl implements NoteDao{
 		}
 	}
 	
-	@Override
 	public List<Note> getNotes(){
 		List<Note> list = null;
 		try {

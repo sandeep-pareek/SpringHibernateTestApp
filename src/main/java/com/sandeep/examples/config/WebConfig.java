@@ -24,9 +24,9 @@ import com.sandeep.examples.model.Note;
 @Configuration
 @EnableTransactionManagement
 @ComponentScan("com.sandeep.examples")
-public class WebConfig extends WebMvcConfigurer {
+public class WebConfig extends WebMvcConfigurerAdapter {
 
-    @Override
+/*    @Override
     public void addResourceHandlers(ResourceHandlerRegistry registry) {
         registry.
         addResourceHandler("/resources/static/js/**")
@@ -37,7 +37,7 @@ public class WebConfig extends WebMvcConfigurer {
         registry.
         addResourceHandler("/resources/static/**")
                 .addResourceLocations("/resources/static/");
-    }
+    }*/
 
     @Bean
     public ViewResolver getViewResolver(){
@@ -47,10 +47,10 @@ public class WebConfig extends WebMvcConfigurer {
         return resolver;
     }
 
-    @Override
+/*    @Override
     public void configureDefaultServletHandling(DefaultServletHandlerConfigurer configurer) {
         configurer.enable();
-    }
+    }*/
     
     @Bean(name = "dataSource")
     public DataSource getDataSource() {

@@ -15,7 +15,7 @@ import org.springframework.web.servlet.ViewResolver;
 import org.springframework.web.servlet.config.annotation.DefaultServletHandlerConfigurer;
 import org.springframework.web.servlet.config.annotation.EnableWebMvc;
 import org.springframework.web.servlet.config.annotation.ResourceHandlerRegistry;
-import org.springframework.web.servlet.config.annotation.WebMvcConfigurerAdapter;
+import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
 import org.springframework.web.servlet.view.InternalResourceViewResolver;
 
 import com.sandeep.examples.model.Note;
@@ -24,9 +24,8 @@ import com.sandeep.examples.model.Note;
 @Configuration
 @EnableTransactionManagement
 @ComponentScan("com.sandeep.examples")
-public class WebConfig extends WebMvcConfigurerAdapter {
+public class WebConfig implements WebMvcConfigurer {
 
-/*    @Override
     public void addResourceHandlers(ResourceHandlerRegistry registry) {
         registry.
         addResourceHandler("/resources/static/js/**")
@@ -37,7 +36,7 @@ public class WebConfig extends WebMvcConfigurerAdapter {
         registry.
         addResourceHandler("/resources/static/**")
                 .addResourceLocations("/resources/static/");
-    }*/
+    }
 
     @Bean
     public ViewResolver getViewResolver(){
@@ -47,10 +46,9 @@ public class WebConfig extends WebMvcConfigurerAdapter {
         return resolver;
     }
 
-/*    @Override
     public void configureDefaultServletHandling(DefaultServletHandlerConfigurer configurer) {
         configurer.enable();
-    }*/
+    }
     
     @Bean(name = "dataSource")
     public DataSource getDataSource() {
